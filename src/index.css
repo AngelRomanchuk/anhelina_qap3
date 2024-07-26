@@ -28,6 +28,23 @@ label{
 }
 select {
   font-size: 14pt;
-  padding: 10px;
   margin: 5px;
+}
+input {
+  font-size: 10pt;
+  padding: 3px;
+  margin: 5px;
+}
+button{
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid burlywood;
+  border-radius: 5px;
+}
+button:hover {
+  margin: 5px 0px 0px 5px;
+  padding: 10px 20px;
+  background-color: burlywood;
+  border: 1px solid white;
+  border-radius: 5px;
 }
