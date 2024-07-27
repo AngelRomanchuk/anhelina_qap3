@@ -40,11 +40,35 @@ button{
   background-color: white;
   border: 1px solid burlywood;
   border-radius: 5px;
+  margin: 1% 5%;
 }
 button:hover {
-  margin: 5px 0px 0px 5px;
+  margin: 1% 5%;
   padding: 10px 20px;
   background-color: burlywood;
   border: 1px solid white;
   border-radius: 5px;
+}
+.entryBox {
+  display: flex;
+  justify-content: space-around;
+}
+.buttonBox {
+  display: flex;
+  justify-content: center;
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  margin: 20px;
+}
+img {
+  width: 31%;
+  height: auto;
+  aspect-ratio: 1/1;
+  border: 3px solid burlywood;
+  border-radius: 5px;
+  margin: 6px;
 }

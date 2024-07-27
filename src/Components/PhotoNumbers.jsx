@@ -6,7 +6,7 @@ const PhotoNumbers = ({ onNumberChange }) => {
     };
     
     return (
-        <div>
+        <div className='phtotoNumbers'>
             <label htmlFor="photoCount">Number of photos:</label>
             <input
                 id="photoCount"

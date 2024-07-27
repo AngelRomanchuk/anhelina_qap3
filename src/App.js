@@ -12,30 +12,33 @@ function App() {
   const [photos, setPhotos] = useState([]);
 
   const fetchPhotos = async () => {
-    try {
       // Create an array of promises to fetch multiple photos
       const photoRequests = Array.from({ length: numberOfPhotos }, () => 
         fetch(`https://dog.ceo/api/breed/${breed}/images/random` )
       );
 
-      // Fetch all images concurrently
+      // Fetch all images
       const responses = await Promise.all(photoRequests);
       const photosData = await Promise.all(responses.map(res => res.json()));
       const photosUrls = photosData.map(data => data.message);
 
-      console.log('Fetched photos:', photosUrls);
       setPhotos(photosUrls);
-    } catch (error) {
-      console.error('Error fetching photos:', error);
-    }
+  };
+  const handleClearPhotos = () => {
+    setPhotos([]);
   };
 
   return (
     <div className="mainBox">
       <Header />
-      <BreedSelect onBreedChange={setBreed}/>
-      <PhotoNumbers onNumberChange={setNumberOfPhotos}/>
-      <Button onClick={fetchPhotos}/>
+      <div className='entryBox'>
+        <BreedSelect onBreedChange={setBreed}/>
+        <PhotoNumbers onNumberChange={setNumberOfPhotos}/>
+      </div>
+      <div className='buttonBox'>
+        <Button text={'Generate photos'} onClick={fetchPhotos}/>
+        <Button text={'Clear Galary'} onClick={handleClearPhotos}/>
+      </div>
       <PhotGalery photos={photos}/>
     </div>
   );
